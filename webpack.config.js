@@ -2,7 +2,10 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: [
+            "./src/index.js",
+              // 'react-hot-loader/patch', // RHL patch
+            ],
   mode: "development",
   module: {
     rules: [
@@ -12,11 +15,17 @@ module.exports = {
         loader: "babel-loader",
         options: { presets: ["@babel/env"] }
       },
+      // {
+      //   test: /\.jsx?$/,
+      //   include: /node_modules/,
+      //   use: ['react-hot-loader/webpack'],
+      // },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       }
-    ]
+    ],
+  
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
 // Pay really close attention here: output.publicPath and

@@ -6,7 +6,7 @@ class Footer extends Component{
     return(
       <div className="Header">
         <hr/>
-        <h1> Footer </h1>
+        <h1> Footer</h1>
         <hr/>
       </div>
     );
@@ -14,4 +14,5 @@ class Footer extends Component{
 }
 
 
-export default hot(module)(Footer);
+ export default hot(module)(Footer);
+//export default Footer;

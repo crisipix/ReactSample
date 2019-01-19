@@ -10,20 +10,29 @@ class App extends Component{
     // must call super on first line
     constructor(){
         super()
-        this.cName = "Will";
+        this.state = { Name: "Chris",
+                       ApplicationName : "React Starter"
+                    };
     }
     getVal()
     {
-        return "Mike!";
+        return "From Functions...";
+    }
+    changeAppName(newName)
+    {
+      this.setState({ApplicationName: newName});
     }
 
   render(){
-    const name = 'Mike';
+    setTimeout(() => {
+      this.setState({Name: "Connor"})
+  },1000);
     return(
       <div className="App">
-      <Header></Header>
-        <h1> Hello, World! This is a test {this.getVal()}</h1>
-        <h1> Constructor Property {this.cName}</h1>
+      {/* Fire on the higher component not the child */}
+      <Header changeAppName={this.changeAppName.bind(this)} applicationName={this.state.ApplicationName}></Header>
+        <h1> Hello, World! {this.getVal()}</h1>
+        <h1> State Property {this.state.Name}</h1>
       <Footer></Footer>
         
       </div>
@@ -31,4 +40,5 @@ class App extends Component{
   }
 }
 
-export default hot(module)(App);
+ export default hot(module)(App)
+//export default App
