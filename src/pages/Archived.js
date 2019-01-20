@@ -10,9 +10,14 @@ class Archived extends Component{
   render(){
     console.log(this.props);
     return(
-      <div className="App">
-        <h1> Archived</h1>
-      </div>
+        <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Archived</h1>
+            <h2 class="subtitle"> Archive Information</h2>
+          </div>
+        </div>
+      </section>
     );
   }
 }

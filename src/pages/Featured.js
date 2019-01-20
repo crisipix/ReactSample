@@ -10,9 +10,14 @@ class Featured extends Component{
   render(){
     console.log(this.props);
     return(
-      <div className="App">
-        <h1> Featured</h1>
-      </div>
+        <section class="hero is-medium is-warning is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Featured</h1>
+            <h2 class="subtitle"> Featured Content</h2>
+          </div>
+        </div>
+      </section>
     );
   }
 }

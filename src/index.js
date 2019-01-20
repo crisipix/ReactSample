@@ -4,9 +4,49 @@
 // It'll find the root element in index.html and render app there. 
 import React from "react";
 import ReactDOM from "react-dom";
+// import {Router, Route, IndexRoute, hashHistory} from "react-router"
+import { HashRouter, Route, Link,IndexRoute,
+    Switch,
+    Redirect
+} from 'react-router-dom';
 import App from "./App.js";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import NoMatch from "./components/NoMatch";
+import Home from "./pages/Home.js";
+import Featured from "./pages/Featured.js";
+import Archived from "./pages/Archived.js";
+import Settings from "./pages/Settings.js";
+import "./Index.css";
 import { AppContainer } from 'react-hot-loader';
- ReactDOM.render(<App />, document.getElementById("root"));
+
+// Render the router and not the app anymore
+//  ReactDOM.render(<App />, document.getElementById("root"));
+const root = document.getElementById("root")
+ReactDOM.render(
+    <HashRouter>
+        <div>
+        <Nav></Nav>
+        <Route path="/" component={App}></Route>
+        <Route path="/Home" component={Home}></Route>
+        <Route path="/Featured" component={Featured}></Route>
+        <Route path="/Archived" component={Archived}></Route>
+        <Route path="/Settings" component={Settings}></Route>
+        {/* <Route path="/product/:id" component={ProductView} /> */}
+
+        {/* <Switch>
+        <Route path="/" component={App}></Route>
+        <Redirect from="/" to="/Home" />
+         <Route path="/Home" component={Home}></Route>
+         <Route path="/Featured" component={Featured}></Route>
+         <Route path="/Archived" component={Archived}></Route>
+         <Route path="/Settings" component={Settings}></Route>
+          <Route component={NoMatch} />
+        </Switch> */}
+        <Footer></Footer>        
+        </div>
+    </HashRouter>, root);
+
 
 // const render = Component => {
 //     ReactDOM.render(

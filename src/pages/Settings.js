@@ -10,9 +10,14 @@ class Settings extends Component{
   render(){
     console.log(this.props);
     return(
-      <div className="App">
-        <h1> Settings</h1>
-      </div>
+        <section class="hero is-medium is-light is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Settings</h1>
+            <h2 class="subtitle"> Settings Content</h2>
+          </div>
+        </div>
+      </section>
     );
   }
 }

@@ -1,10 +1,10 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
 
-class Footer extends Component{
+class NoMatch extends Component{
   render(){
     return(
-    <footer class="footer">
+    <NoMatch class="NoMatch">
       <div class="content has-text-centered">
         <p>
           <strong>Sample Site</strong> by <a href="https://github.com">Chris</a>. The source code is licensed
@@ -12,11 +12,11 @@ class Footer extends Component{
           is licensed.
         </p>
       </div>
-    </footer>
+    </NoMatch>
     );
   }
 }
 
 
- export default hot(module)(Footer);
-//export default Footer;
+ export default hot(module)(NoMatch);
+//export default NoMatch;
