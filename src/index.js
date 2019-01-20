@@ -28,6 +28,8 @@ ReactDOM.render(
         <div>
         <Nav></Nav>
         <Route path="/" component={App}></Route>
+        <Redirect from="/" to="Home" />
+
         <Route path="/Home" component={Home}></Route>
         <Route path="/Featured" component={Featured}></Route>
         <Route path="/Archived" component={Archived}></Route>
